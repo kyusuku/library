@@ -14,3 +14,59 @@
 input, button {
     border: none;
 }
+
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    background-color: #661a00;
+}
+
+.wrapper {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.newBookBtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #bc6a3c;
+    color: white;
+    font-weight: bold;
+}
+
+.newBookBtn:hover {
+    background-color: #91522e;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+
+    width: clamp(250px, 50vw, 800px);
+    background-color: #d5b07c;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 5px;;
+}
