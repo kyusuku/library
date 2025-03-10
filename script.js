@@ -27,21 +27,22 @@ function displayBooks() {
         bookId.textContent = book.id;
         bookTitle.textContent = book.title;
         bookAuthor.textContent = book.author;
-        bookPages.textContent = book.pages;
+        bookPages.textContent = book.pages + ' Pages';
         bookRead.textContent = book.read;
 
-        bookCard.appendChild(bookId);
+    
         bookCard.appendChild(bookTitle);
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(bookPages);
         bookCard.appendChild(bookRead);
+        bookCard.appendChild(bookId);
 
         card.appendChild(bookCard);
     }
 }
 
-addBookToLibrary('Friends', 'Kevin', 300, false);
-addBookToLibrary('Mistakes', 'Glenn', 240, true);
+addBookToLibrary('Harry Potter', 'J.K. Rowling', 300, false);
+addBookToLibrary('Animal Farm', 'George Orwell', 240, true);
 addBookToLibrary('Stonks', 'Lucy', 99, true);
 
 displayBooks();
