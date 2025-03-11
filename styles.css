@@ -25,10 +25,11 @@ html {
 
 body {
     background-color: #661a00;
+    padding: 40px;
 }
 
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;

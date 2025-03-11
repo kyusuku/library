@@ -105,7 +105,10 @@ card.addEventListener('click', (e) => {
         myLibrary.splice(myLibrary.findIndex(book => book.id === bookId), 1);
 
         bookCard.remove();
-        displayBooks();
+
+        if (myLibrary.length === 0) {
+            card.style.display = "none";
+        }
     }
 
     if (e.target.id === 'readBtn') {
