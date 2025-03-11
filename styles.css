@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -45,12 +45,61 @@ h1 {
     font-size: 3rem;
 }
 
+dialog {
+    align-self: center;
+    justify-self: center;
+
+    padding: 20px;
+    border-radius: 5px;
+
+    background-color: #d5b07c;
+    font-size: 1.25rem;
+    width: clamp(375px, 50vw, 400px);
+}
+
+input {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+
+    background-color: #fff1dd;
+}
+
+input[type="checkbox"] {
+    width: 50%;
+    height: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+::backdrop {
+    background-color: antiquewhite;
+    opacity: 0.75;
+}
+
+form button {
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: #fff1dd;
+
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
 .newBookBtn {
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 5px;
     background-color: #bc6a3c;
     color: white;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .newBookBtn:hover {
@@ -59,7 +108,7 @@ h1 {
 
 .card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
 
     width: clamp(250px, 50vw, 800px);
@@ -78,5 +127,28 @@ h1 {
 
     background-color: antiquewhite;
     padding: 20px;
-    border-radius: 5px;;
+    border-radius: 5px;
+    border-left: 10px solid #661a00;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+    font-size: 1.25rem;
+}
+
+.card > div > div {
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.card > div > div:first-child {
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    margin-bottom: 20px;
+}
+
+.card > div > div:nth-child(4) {
+    margin-bottom: 20px;
 }

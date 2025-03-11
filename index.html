@@ -10,6 +10,20 @@
 <body>
     <div class="wrapper">
         <h1>My Books</h1>
+        <dialog>
+            <form method="dialog">
+                <label for="bookTitle">Title</label>
+                <input type="text" placeholder="Harry Potter" id="bookTitle" required>
+                <label for="bookAuthor">Author</label>
+                <input type="text" placeholder="J.K. Rowling" id="bookAuthor" required>
+                <label for="numPages">No. Pages</label>
+                <input type="number" placeholder="512" id="numPages" required>
+                <label for="hasRead">Have you read this book?</label>
+                <input type="checkbox" id="hasRead">
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button class="confirmBtn" value="default">Confirm</button>
+            </form>
+        </dialog>
         <button type="button" class="newBookBtn">New Book</button>
         <div class="card"></div>
     </div>

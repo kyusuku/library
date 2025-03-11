@@ -1,6 +1,14 @@
 const myLibrary = [];
 const card = document.querySelector('.card');
-const newBookBtn = document.querySelector('.newBookButton');
+const newBookBtn = document.querySelector('.newBookBtn');
+const dialog = document.querySelector('dialog');
+const dialogCloseBtn = document.querySelector('dialog button');
+const dialogConfirm = document.querySelector('.confirmBtn');
+
+let userTitle;
+let userAuthor;
+let userPages;
+let userRead;
 
 function Book(title, author, numberOfPages, hasRead) {
     this.id = crypto.randomUUID().substring(0,13);
@@ -48,5 +56,29 @@ addBookToLibrary('Stonks', 'Lucy', 99, true);
 displayBooks();
 
 newBookBtn.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+dialogCloseBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog.close();
+});
+
+dialogConfirm.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    userTitle = document.getElementById('bookTitle').value;
+    userAuthor = document.getElementById('bookAuthor').value;
+    userPages = document.getElementById('numPages').value;
+    userRead = document.getElementById('hasRead').checked
+        ? true
+        : false;
+
+    dialog.close();
+
+    addBookToLibrary(userTitle, userAuthor, userPages, userRead);
+    card.textContent = "";
+    displayBooks();
+
 
 });
