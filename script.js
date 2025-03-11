@@ -4,7 +4,6 @@ const newBookBtn = document.querySelector('.newBookBtn');
 const dialog = document.querySelector('dialog');
 const dialogCloseBtn = document.querySelector('dialog button');
 const dialogConfirm = document.querySelector('.confirmBtn');
-// const removeBook = document.getElementById('removeBook');
 
 let userTitle;
 let userAuthor;
@@ -25,6 +24,13 @@ function addBookToLibrary(title, author, numberOfPages, hasRead) {
 }
 
 function displayBooks() {
+    if (myLibrary.length === 0) {
+        card.style.display = "none";
+    } else {
+        card.style.display = "grid";
+    }
+
+
     for (const book of myLibrary) {
         let removeBookBtn = document.createElement('button');
 
@@ -63,10 +69,6 @@ function displayBooks() {
     }
 }
 
-addBookToLibrary('Harry Potter', 'J.K. Rowling', 300, false);
-addBookToLibrary('Animal Farm', 'George Orwell', 240, true);
-addBookToLibrary('Stonks', 'Lucy', 99, true);
-
 displayBooks();
 
 newBookBtn.addEventListener('click', () => {
@@ -103,6 +105,7 @@ card.addEventListener('click', (e) => {
         myLibrary.splice(myLibrary.findIndex(book => book.id === bookId), 1);
 
         bookCard.remove();
+        displayBooks();
     }
 
     if (e.target.id === 'readBtn') {
