@@ -4,6 +4,9 @@ const newBookBtn = document.querySelector('.newBookBtn');
 const dialog = document.querySelector('dialog');
 const dialogCloseBtn = document.querySelector('dialog button');
 const dialogConfirm = document.querySelector('.confirmBtn');
+const bookTitleInput = document.getElementById('bookTitle');
+const bookAuthorInput = document.getElementById('bookAuthor');
+const numPagesInput = document.getElementById('numPages');
 
 let userTitle;
 let userAuthor;
@@ -71,8 +74,21 @@ function displayBooks() {
 
 displayBooks();
 
+function validateInputs() {
+    if (bookTitleInput.value && bookAuthorInput.value && numPagesInput.value) {
+        dialogConfirm.disabled = false;
+    } else {
+        dialogConfirm.disabled = true;
+    }
+}
+
+bookTitleInput.addEventListener('input', validateInputs);
+bookAuthorInput.addEventListener('input', validateInputs);
+numPagesInput.addEventListener('input', validateInputs);
+
 newBookBtn.addEventListener('click', () => {
     dialog.showModal();
+    dialogConfirm.disabled = true;
 });
 
 dialogCloseBtn.addEventListener('click', (e) => {
