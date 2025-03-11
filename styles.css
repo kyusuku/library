@@ -130,10 +130,10 @@ form button {
 
 .card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
 
-    width: clamp(250px, 50vw, 800px);
+    width: clamp(300px, 50vw, 800px);
     background-color: #d5b07c;
     padding: 20px;
     border-radius: 10px;
@@ -161,8 +161,9 @@ form button {
     font-family: "Comic Sans MS", "Comic Sans", sans-serif;
     display: flex;
 
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    max-width: 30ch;
+    hyphens: auto;
 }
 
 .card > div > div:nth-child(2) {
