@@ -7,6 +7,7 @@ const dialogConfirm = document.querySelector('.confirmBtn');
 const bookTitleInput = document.getElementById('bookTitle');
 const bookAuthorInput = document.getElementById('bookAuthor');
 const numPagesInput = document.getElementById('numPages');
+const hasReadInput = document.getElementById('hasRead');
 
 let userTitle;
 let userAuthor;
@@ -87,6 +88,11 @@ bookAuthorInput.addEventListener('input', validateInputs);
 numPagesInput.addEventListener('input', validateInputs);
 
 newBookBtn.addEventListener('click', () => {
+    bookTitleInput.value = "";
+    bookAuthorInput.value = "";
+    numPagesInput.value = "";
+    hasReadInput.checked = false;
+
     dialog.showModal();
     dialogConfirm.disabled = true;
 });
